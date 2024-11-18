@@ -6,6 +6,7 @@ use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\PersonalLibraryController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\seriesController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\Guest;
 use App\Http\Middleware\Headers;
@@ -73,6 +74,12 @@ Route::middleware([Headers::class])->group(function ()
                 Route::get('/', 'index')->name('library.favorites');
             });
 
+        Route::controller(UserController::class)
+            ->prefix('user')
+            ->group(function ()
+            {
+                Route::put('/update', 'update')->name('user.update');
+            });
     });
 
 });

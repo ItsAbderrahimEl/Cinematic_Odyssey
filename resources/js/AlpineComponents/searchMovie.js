@@ -1,22 +1,22 @@
-export default function searchSeries ()
+export default function searchMovie ()
 {
     return {
         isOpen : false,
-        placeholder : 'Find your favorite show...',
-        seriesSection : document.getElementById ('seriesSection'),
-        searchForShow : document.getElementById ('searchForShow'),
+        placeholder : 'Find your favorite movie...',
+        movieSection : document.getElementById ('movieSection'),
+        searchForMovie : document.getElementById ('searchForMovie'),
         searchValue : "",
 
         inBlur (event)
         {
             this.isOpen = false
-            this.placeholder = 'Find your favorite show...'
+            this.placeholder = 'Find your favorite movie...'
             event.target.value = ""
         },
         inFocus ()
         {
             this.placeholder = ''
-            this.seriesSection.innerHTML = ""
+            this.movieSection.innerHTML = ""
 
         },
         inInput ()
@@ -28,18 +28,18 @@ export default function searchSeries ()
                     this.isOpen = true
                 }, 3000)
             }
-            this.seriesSection.innerHTML = ""
+            this.movieSection.innerHTML = ""
         },
         keydown (event)
         {
             const codeActions = {
                 9 : () =>
                 {
-                    this.$refs.searchForShow.focus ();
+                    this.$refs.searchForMovie.focus ();
                 },
                 27 : () =>
                 {
-                    this.$refs.searchForShow.blur ();
+                    this.$refs.searchForMovie.blur ();
                 }
             }
             if (codeActions[ event.keyCode ])
