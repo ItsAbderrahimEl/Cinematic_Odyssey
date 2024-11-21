@@ -55,7 +55,7 @@
                             >
                                 <ul >
 
-                                    <x-profile.profile-modal ></x-profile.profile-modal >
+                                    <livewire:profile-form></livewire:profile-form>
                                     <li class="px-4 py-2 rounded hover:bg-gray-200 cursor-pointer">
                                         <a href="{{ route('logout') }}">Logout</a >
                                     </li >

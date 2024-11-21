@@ -57,7 +57,7 @@ class SearchActor extends Component
 
         Cache::put("it_has_been_called", true);
         // Retrieve 10 pages of actors
-        $this->getActorsData(10);
+        $this->getActorsData(5);
 
         Cache::put("duplicatedActors", $this->actors);
     }

@@ -6,18 +6,15 @@ use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\PersonalLibraryController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\seriesController;
-use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\Guest;
 use App\Http\Middleware\Headers;
+use App\Http\Middleware\UserNavigationTracker;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function ()
-{
-    return redirect()->route('movies.index');
-})->name('main');
+Route::get('/', function () { return redirect()->route('movies.index'); })->name('main');
 
-Route::middleware([Headers::class])->group(function ()
+Route::middleware([Headers::class, UserNavigationTracker::class])->group(function ()
 {
     Route::controller(MoviesController::class)
         ->prefix('movies')
@@ -73,13 +70,5 @@ Route::middleware([Headers::class])->group(function ()
             {
                 Route::get('/', 'index')->name('library.favorites');
             });
-
-        Route::controller(UserController::class)
-            ->prefix('user')
-            ->group(function ()
-            {
-                Route::put('/update', 'update')->name('user.update');
-            });
     });
-
 });
