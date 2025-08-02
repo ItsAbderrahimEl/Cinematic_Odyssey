@@ -84,7 +84,7 @@
             <a
                 class=" text-gray-300 font-bold transition duration-200 ease-in-out hover:text-cyan-400 "
                 href="mailto:abderahimouriachi@gmail.com"
-            > Message The Author</a >
+            > Email The Author</a >
         </div >
     </footer > {{-- End of the Footer--}}
     @livewireScripts
