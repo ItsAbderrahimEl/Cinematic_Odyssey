@@ -4,10 +4,6 @@ This project is a web application that allows users to browse movies, TV series,
 
 ---
 
-[Github Code](https://github.com/ItsAbderrahimEl/Cinematic_Odyssey)
-
----
-
 ## ✨ Features
 
 - 🔍 Search and browse **movies**, **TV series**, and **actors** using TMDB data  
